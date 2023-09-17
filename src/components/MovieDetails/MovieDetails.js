@@ -1,5 +1,5 @@
 import { getMovieById } from "Api/api";
-import { useParams, Outlet, Link } from "react-router-dom";
+import { useParams, Outlet} from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import { ContainerMovie, StyledDiv, StyledLinkMovie, StyledDivTitle, StyledLinkCast, StyledLinkReviews, StyledDivLinks } from "./MovieDetails.styled";
