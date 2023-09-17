@@ -5,9 +5,9 @@ import { useEffect } from "react";
 import { ContainerMovie, StyledDiv, StyledLinkMovie, StyledDivTitle, StyledLinkCast, StyledLinkReviews, StyledDivLinks } from "./MovieDetails.styled";
 export const MovieDetails = ({}) => {
     const [MovieData, setMovieData] = useState({})
-    const { movieId } = useParams();
-    const id = movieId.slice(1)
     useEffect(() => {
+        const { movieId } = useParams();
+    const id = movieId.slice(1)
       getMovieById(id)
       .then(resp => setMovieData(resp))
       .catch(err => console.log(err))
