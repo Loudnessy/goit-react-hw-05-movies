@@ -6,8 +6,8 @@ import { ContainerMovie, StyledDiv, StyledLinkMovie, StyledDivTitle, StyledLinkC
 export const MovieDetails = () => {
     const [MovieData, setMovieData] = useState({})
     const { movieId } = useParams();
-    const id = movieId.slice(1)
     useEffect(() => {
+        const id = movieId.slice(1)
       getMovieById(id)
       .then(resp => setMovieData(resp))
       .catch(err => console.log(err))
