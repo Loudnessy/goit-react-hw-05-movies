@@ -1,5 +1,5 @@
 import { Home } from "./Home/Home";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import { Movies } from "./Movies/Movies";
 import { StyledHeader, StyledNav, StyledNavlink, Container } from "./Header/Header.styled";
 import { MovieDetails } from "./MovieDetails/MovieDetails";
