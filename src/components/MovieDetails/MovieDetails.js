@@ -6,12 +6,12 @@ import { ContainerMovie, StyledDiv, StyledLinkMovie, StyledDivTitle, StyledLinkC
 export const MovieDetails = () => {
     const [MovieData, setMovieData] = useState({})
     const { movieId } = useParams();
+    const id = movieId.slice(1)
     useEffect(() => {
-        const id = movieId.slice(1)
       getMovieById(id)
       .then(resp => setMovieData(resp))
       .catch(err => console.log(err))
-    }, [])
+    }, [id])
     const {title, genres, overview, vote_average} = MovieData
     const genresForPage = genres ? genres.map(el => el.name).join(" ") : [];
     const userScore = Math.round(vote_average * 10)
