@@ -16,3 +16,7 @@ export const getMovieReviews = async (id) => {
     const resp = await axios.get(`/movie/${id}/reviews?api_key=e8524843ebc3fd7f994099fcca5f13fd`)
     return await resp.data
 }
+export const getSearchMovie = async (search) => {
+    const resp = await axios.get(`/search/movie?${search}&api_key=e8524843ebc3fd7f994099fcca5f13fd`)
+    return await resp.data 
+}
