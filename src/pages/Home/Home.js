@@ -19,3 +19,4 @@ export const Home = () => {
         </ContainerHome>
     </section>
 }
+export default Home

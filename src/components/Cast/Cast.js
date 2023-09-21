@@ -2,7 +2,7 @@ import { getCreditsById } from "Api/api";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-export const Cast = () => {
+const Cast = () => {
     const [Credits, setCredits] = useState({})
     const { movieId } = useParams();
     const id = movieId.slice(1)
@@ -31,3 +31,4 @@ export const Cast = () => {
 </ul>
     </div>
 }
+export default Cast

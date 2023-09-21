@@ -3,8 +3,9 @@ import { StyledForm, StyledUl } from "./Movies.styled"
 import { useState } from "react"
 import { useEffect } from "react"
 import { Link, useSearchParams } from "react-router-dom";
-import { ContainerHome } from "components/Home/Home.styled";
-export const Movies = () => {
+import { ContainerHome } from "pages/Home/Home.styled";
+import { useLocation } from "react-router-dom";
+const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [SearchMovie, setSearchMovie] = useState({})
         const query = searchParams.get("query")
@@ -12,8 +13,10 @@ export const Movies = () => {
     evt.preventDefault()
     await setSearchParams({query: evt.target.search.value})
   }
+  const location = useLocation();
   useEffect(() => {
     if (query === null) {
+        setSearchMovie('')
         return
     }
     getSearchMovie(`query=${query}`)
@@ -30,7 +33,7 @@ export const Movies = () => {
     <div>
         <StyledUl>
             {SearchMovie.results && SearchMovie.results.map(movie => <li>
-                <Link key={movie.id} to={`/movies/:${movie.id}`}>
+                <Link key={movie.id} to={`/movies/:${movie.id}`} state={{ from: location }}>
                 <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} width="250"></img>
                 <h2>{movie.title}</h2>
                 </Link>
@@ -41,3 +44,4 @@ export const Movies = () => {
     </section>
     
 }
+export default Movies
