@@ -23,7 +23,7 @@ export const MovieDetails = () => {
         <ContainerMovie>
             <StyledLinkMovie to={backLinkHref}>Go back</StyledLinkMovie>
         <StyledDiv>
-            <img src={'https://image.tmdb.org/t/p/original' + MovieData.poster_path} alt="img" width="250"></img>
+            <img src={'https://image.tmdb.org/t/p/original' + MovieData.poster_path} alt={`${movie.title} poster`} width="250"></img>
            <StyledDivTitle>
                <StyledDivTitle>
                     <h2>{title}</h2>

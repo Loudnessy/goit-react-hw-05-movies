@@ -22,7 +22,7 @@ const Movies = () => {
     getSearchMovie(`query=${query}`)
     .then(resp => setSearchMovie(resp))
     .catch(err => console.log(err))
-  }, [searchParams])
+  }, [searchParams, query])
   
     return <section>
         <ContainerHome>
@@ -34,7 +34,7 @@ const Movies = () => {
         <StyledUl>
             {SearchMovie.results && SearchMovie.results.map(movie => <li>
                 <Link key={movie.id} to={`/movies/:${movie.id}`} state={{ from: location }}>
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} width="250"></img>
+                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} width="250" alt={`${movie.title} poster`}></img>
                 <h2>{movie.title}</h2>
                 </Link>
             </li>)}
